@@ -73,7 +73,7 @@ function setup_ssl() {
             create_openssl_cnf
 
             openssl genrsa -out rootCA.key 2048
-            openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem #-config openssl.cnf
+            echo -e "\n\n\n\n\n\n\n" | openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 
             openssl genrsa -out ssl.key 2048
             openssl req -new -key ssl.key -out ssl.csr -subj "/CN=parking-garage" -config openssl.cnf
